@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Enrollee Information </title>
+      <style>
+         /* CSS styling for the user interface */
+         /* Input fields */
+         input[type=text], select, input[type=date] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+         }
+         
+         /* Submit and Cancel button */
+         input[type=submit], input[type=button] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+         }
+         
+         /* Table */
+         table {
+            border-collapse: collapse;
+            width: 100%;
+         }
+         
+         th, td {
+            text-align: left;
+            padding: 8px;
+         }
+         
+         tr:nth-child(even){background-color: #f2f2f2}
+         
+         /* Title */
+         h1 {
+            text-align: center;
+         }
+         
+         /* Search bar */
+         #searchBar {
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+            width: 100%;
+         }
+         
+         /* Search input */
+         #searchInput {
+            width: 100%;
+            border: none;
+            padding: 4px;
+            border-radius: 4px;
+         }
+      </style>
+   </head>
+   <body>
+      <h1>Enrollee Information Management</h1>
+      <!-- Enrollment form -->
+      <form id="enrollForm">
+         <label for="firstName">First Name:</label>
+         <input type="text" id="firstName" name="firstName" required>
+         
+         <label for="middleName">Middle Name:</label>
+         <input type="text" id="middleName" name="middleName">
+         
+         <label for="lastName">Last Name:</label>
+         <input type="text" id="lastName" name="lastName" required>
+         
+         <label for="age">Age:</label>
+         <input type="text" id="age" name="age" required>
+         
+         <label for="gender">Gender:</label>
+         <select id="gender" name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+         </select>
+         
+         <label for="birthday">Birthday:</label>
+         <input type="date" id="birthday" name="birthday" required>
+         
+         <label for="course">Course:</label>
+         <input type="text" id="course" name="course" required>
+         
+         <label for="schoolYear">School Year:</label>
+         <input type="text" id="schoolYear" name="schoolYear" required>
+         
+         <input type="submit" value="Enroll">
+         <input type="button" value="Cancel" onclick="clearForm()">
+      </form>
+      
+      <!-- Table for displaying the list of enrollees -->
+      <input type="text" id="searchBar" onkeyup="search()" placeholder="Search by name...">
+      <table id="enrolleeTable">
+         <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Middle Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Birthday</th>
+            <th>Course</th>
+            <th>School Year</th>
+            <th>Action</th>
+         </tr>
+      </table>
+      
+    </head>
+    <body> 
+    
